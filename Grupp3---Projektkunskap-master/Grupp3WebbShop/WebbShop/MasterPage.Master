@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WebbShop.MasterPage" %>
+
+<!DOCTYPE html>
+<link href='<%=ResolveUrl("~/Content/bootstrap.css") %>' rel="stylesheet" />
+<link href='<%=ResolveUrl("~/Styles/MasterStyle.css") %>' rel="stylesheet" />
+<link href='<%=ResolveUrl("~/Styles/StartPageStyle.css") %>' rel="stylesheet" />
+<link href='<%=ResolveUrl("~/Styles/ProductsStyle.css") %>' rel="stylesheet" />
+<link href='<%=ResolveUrl("~/Styles/ErrorPageStyle.css") %>' rel="stylesheet" />
+<script src='<%=ResolveUrl("~/Scripts/jquery-1.9.1.js") %>'></script>
+<script src='<%=ResolveUrl("~/Scripts/bootstrap.js") %>'></script>
+<script src='<%=ResolveUrl("~/Scripts/JavaScript.js") %>'></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>Master Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="description" content="Description" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header id="header" class="container-fluid">
+
+                <div class="navbar navbar-default navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="StartPage.aspx">Logo</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/StartPage.aspx">Home</a></li>
+                                <li class="dropdown menu-large">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product Listing <b class="caret"></b></a>
+                                    <ul class="dropdown-menu megamenu row">
+                                        <li>
+                                            <div class="col-sm-6 col-md-3">
+                                                <a href="#" class="thumbnail">
+                                                    <p>Bikes</p>
+                                                    <asp:ImageButton ID="bikeCategoryButton" runat="server" ImageUrl="~/Pictures/BikeCategory.jpg" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                <a href="#" class="thumbnail">
+                                                    <p>Bike Accessories</p>
+                                                    <asp:ImageButton ID="bikeAccessoriesButton" runat="server" ImageUrl="~/Pictures/BikeAccessories.jpg" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                <a href="#" class="thumbnail">
+                                                    <p>Bike Clothing</p>
+                                                    <asp:ImageButton ID="bikeClothingButton" runat="server" ImageUrl="~/Pictures/BikeClothing.jpg" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                <a href="#" class="thumbnail">
+                                                    <p>Bike Components</p>
+                                                    <asp:ImageButton ID="bikeComponentsButton" runat="server" ImageUrl="Pictures/BikeComponents.jpg" />
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>
+                                        <asp:Label ID="showItemsInCart" runat="server" Visible="true"></asp:Label><span class="caret"></span></a>
+                                    <ul class="dropdown-menu dropdown-cart" role="menu">
+                                        <asp:Label runat="server" ID="CartErrorLabel" Visible="false"></asp:Label>
+                                        <asp:Repeater ID="ShoppingCartRepeater" OnItemCommand="ShoppingCartRepeater_OnItemCommand" runat="server">
+                                            <HeaderTemplate>
+                                                <table class="CartTable">
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Amount</th>
+                                                    <th>Delete</th>
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <tr>
+                                                        <td>
+                                                            <asp:Label runat="server" ID="Name"
+                                                                Text='<%# Eval("Name") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label runat="server" ID="Price"
+                                                                Text='<%# Eval("Price") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label runat="server" ID="Amount"
+                                                                Text='<%# Eval("Amount") %>' />
+                                                        </td>
+                                                    <td>
+                                                        <asp:Button runat="server" CommandName="DeleteItem"  Text="Delete" CommandArgument='<%#Eval("Id")%>'/>
+                                                    </td>
+                                                    </tr>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                </table>
+                                                <asp:HyperLink CssClass="text-center" ID="ShowTotalCost"  runat="server" Text="">Total cost: </asp:HyperLink></li>
+                                                <asp:Button runat="server" Text="Clear Cart" CommandName="ClearCart"/>
+                                                <li><a class="text-center" href="CheckoutPage.aspx">View Cart</a></li>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+                                        <li>
+
+                                        <li class="divider"></li>
+                                        <%--If the below line does not work make it an asp hyperlink--%>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="col-sm-3 col-md-3 nav navbar-nav navbar-right">
+                                <form class="navbar-form" role="search">
+                                    <div class="input-group">
+
+                                        <%--<input type="text"  placeholder="Search" name="q">--%>
+                                        <asp:TextBox ID="searchBar" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <div class="input-group-btn">
+                                            <asp:Button ID="searchButton" OnClick="searchButton_Click" CssClass="btn btn-default" runat="server" type="submit" Text="Search"><%--<i class="glyphicon glyphicon-search"</i>>--%></asp:Button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%--<input id="searchBox" type="search" placeholder="Search " />--%>
+                <%--<img id="cart" src="Pictures/ShoppingCart.png" />--%>
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <article class="container-fluid">
+                <div class="row">
+                    <div id="mainContent" class="col-sm-10">
+                        <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div id="asideContent" class="col-sm-2">
+                        <asp:ContentPlaceHolder ID="asideContentPlaceHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </article>
+
+            <footer class="container-fluid">
+                <div class="row">
+                    <div id="footer" class="col-sm-12">
+                        <ul>
+                            <li>Contact information:Telephone 42-13378417 E-mail: some.name@acorporation.se</li>
+                            <li>To use this website you must agree to the
+                                <asp:HyperLink ID="HyperLink1" runat="server">Terms and Conditions</asp:HyperLink></li>
+                            <li>This website and its software will be the property of Avensia</li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,50 @@
+﻿body {
+    background-color: rgb(221, 218, 214);
+}
+.cartSummary{
+
+}
+#productName{
+    background-color: #ff0000;
+    width: 300px;
+}
+#itemNumber{
+    background-color: deepskyblue;
+    width: 120px;
+    position: relative;
+}
+#priceBox{
+    background-color: darkorchid;
+    width: 125px;
+}
+#h1 {
+    
+}
+
+#checkoutHeader {
+    background-color: rgb(221, 218, 214);
+    display: inline;
+}
+
+.checkoutLabels {
+    font-size: large;
+    padding-right: 70px;
+}
+
+.labelPay {
+    position: absolute;
+    left: 200px;
+    border: 150px;
+    font-style: inherit;
+    text-decoration: underline;
+}
+
+#totalPrice {
+    background-color: lightsalmon;
+    width: 200px;
+    margin-left: 181.5px;
+    padding-bottom: 50px;
+}
+#orderShipping {
+    padding-bottom: 15px;
+}

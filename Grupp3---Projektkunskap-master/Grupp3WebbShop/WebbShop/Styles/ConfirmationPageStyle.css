@@ -1,0 +1,29 @@
+﻿body {
+}
+.centering{
+    margin: 0 auto;
+    text-align: center;
+}
+#heading2{
+    margin: 0 auto;
+}
+#confirmationAdress{
+    background-color: #ededed;
+    width: 250px;
+    text-align: start;
+}
+#confirmationPrice{
+    background-color: #ededed;
+    width: 250px;
+    text-align: start;
+}
+#heading1{
+    background-color: #b8ffe7;
+    font-size: larger;
+    width: 250px;
+}
+#heading2{
+    background-color: #b8ffe7;
+    font-size: larger;
+    width: 250px;
+}

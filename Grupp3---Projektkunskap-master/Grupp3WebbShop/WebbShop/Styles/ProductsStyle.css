@@ -1,0 +1,13 @@
+﻿#filterAside {
+    margin: 30px;
+    padding: 20px;
+    background-color: #dedbd7;
+}
+#CategoryInView {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.colorList {
+    float: right;
+    color: red;
+}

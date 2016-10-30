@@ -1,0 +1,153 @@
+﻿body {
+}
+#popularProducts {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+#headerTile {
+        text-align: center;
+        background: #dedbd7;
+}
+.pic {
+    height: 200px;
+    width: 225px;
+    border: 1px solid black;
+}
+
+#asideBox {
+}
+
+#campaign {
+    background: #dedbd7;
+    text-align: center;
+}
+   
+#table {
+}
+
+.left {
+    border-radius: 3% 3% 3% 3%;
+    float: left;   
+    border: 1px solid lightblue;   
+    width: 220px;
+    height: 205px;
+    margin: 15px;
+    text-align: center;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.left:hover {
+    border: solid darkblue;
+    background-color: #f9f8f8;
+}
+
+.innerPanel {
+     width: 210px;
+    height: 80%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.repeaterImage {
+    width: 70%;
+    height: 70%;
+}
+.HiddenImageButton {
+    background: transparent;
+    border: none !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+}  
+
+
+/*Product Detail page styles*/
+
+
+.detailItems2 {
+   
+   
+    border-radius: 3% 3% 3% 3%;
+    float: left;   
+   
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    margin-left: 2em;
+    text-align: center;
+    
+    font-weight: bold;
+    
+    
+}
+#largeImage {
+    padding-top: 100px;
+    padding-left: 300px;
+   
+}
+
+#smallImage {
+    text-align: center;
+    height: 50px;
+    margin-left: 10px;
+}
+#ColorSizeDropDownList {
+    float: left;
+    /*padding-left: 1100px;*/
+}
+#nameAndDescription {
+    /*height: 370px;
+    width: 1200px;
+    padding-left: 700px;*/
+
+}
+#price {
+    font-weight: bold;
+    color: red;
+    float: right;
+}
+#DescriptionAndWeight {
+    font-weight: bold;
+    
+}
+#Name {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#addToCartButton {
+    float: right;
+}
+#SizeDropDownList {
+    float: left;
+    font-weight: bold;
+}
+#ColorDropDownList {
+    float: left;
+    margin-right: 100px;
+    font-weight: bold;
+}
+.repeaterLargeImage {
+    
+}
+.ads{
+    border-radius: 3% 3% 3% 3%;
+    float: left;   
+    border: 1px solid lightblue;   
+    width: 200px;
+    height: 205px;
+    margin: 5px;
+    text-align: center;
+    padding: 2px;
+    font-weight: bold;
+}
+.ads:hover{
+    border: solid #ff6a00;
+    background-color: #f9f8f8;
+}
